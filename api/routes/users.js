@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const CrypoJs = require("crypto-js");
+const CryptoJs = require("crypto-js");
 const verify = require("../verifyToken")
 
 // UPDATE
