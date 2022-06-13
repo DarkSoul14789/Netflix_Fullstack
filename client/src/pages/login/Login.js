@@ -1,6 +1,6 @@
 import React from 'react'
 import './login.scss'
-
+import { Link } from 'react-router-dom'
 const Register = () => {
 
   return (
@@ -17,7 +17,7 @@ const Register = () => {
           <input type="password" placeholder='Password'/>
           <button className="loginButton">Sign In</button>
           <span>
-            New to Netflix? <b>Sign up now.</b>
+            New to Netflix? <b><Link to="/register" className='link'>Sign up now.</Link></b>
           </span>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a bot. <b>Learn more</b>
