@@ -1,6 +1,7 @@
 import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined } from '@mui/icons-material'
 import axios from 'axios';
 import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './listItem.scss'
 
 const ListItem = ({index , item}) => {
@@ -29,6 +30,8 @@ const ListItem = ({index , item}) => {
   }, [item]);
   
   return (
+    <Link to='/watch' state={{movie:movie}}>
+
     <div className='ListItem' 
     style={{left: isHovered && index * 225-50 + index*2.5}}
     onMouseEnter={()=>setIsHovered(true)} 
@@ -59,6 +62,7 @@ const ListItem = ({index , item}) => {
         </>
       )}
     </div>
+    </Link>
   )
 }
 
