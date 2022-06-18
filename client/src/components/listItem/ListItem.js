@@ -9,7 +9,7 @@ const ListItem = ({index , item}) => {
   const [movie, setMovie] = useState({});
   
   useEffect(() => {
-    // let abortController = new AbortController();
+    let abortController = new AbortController();
     const getMovie = async ()=>{
       try {
         const res = await axios.get("/movie/find/"+item,{
@@ -24,9 +24,9 @@ const ListItem = ({index , item}) => {
       }
     };
     getMovie();
-    // return () => {
-    //   abortController.abort();
-    // }
+    return () => {
+      abortController.abort();
+    }
   }, [item]);
   
   return (
